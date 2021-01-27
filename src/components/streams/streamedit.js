@@ -1,5 +1,14 @@
 import React from 'react';
-const StreamEdit = () => {
-    return <div>StreamEdit</div>
+import { connect } from "react-redux";
+
+import { editStream } from './../../actions/index';
+class StreamEdit extends React.Component {
+    render() {
+        return (
+            <div>
+                StreamEdit
+            </div>
+        );
+    }
 }
-export default StreamEdit;
+export default connect(null, { editStream })(StreamEdit)

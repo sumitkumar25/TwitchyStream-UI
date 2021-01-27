@@ -1,5 +1,14 @@
 import React from 'react';
-const StreamShow = () => {
-    return <div>StreamShow</div>
+import { connect } from "react-redux";
+
+import { fetchStream } from './../../actions/index';
+class StreamShow extends React.Component {
+    render() {
+        return (
+            <div>
+                StreamShow
+            </div>
+        );
+    }
 }
-export default StreamShow;
+export default connect(null, { fetchStream })(StreamShow);
