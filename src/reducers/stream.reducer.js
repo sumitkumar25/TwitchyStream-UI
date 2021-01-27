@@ -9,12 +9,10 @@ const streamReducer = (state = {}, action) => {
             return { ...state, [action.payload.id]: action.payload }
 
         case ACTIONS.GET_STREAMS:
-            return { ...state, [action.payload.id]: action.payload }
-
+            return { ...state, ...mapKeys(action.payload, 'id') }
 
         case ACTIONS.CREATE_STREAM:
-
-            return { ...state, ...mapKeys(action.payload, 'id') }
+            return { ...state, [action.payload.id]: action.payload }
 
         case ACTIONS.DELETE_STREAM:
             return omit(state, action.payload);
